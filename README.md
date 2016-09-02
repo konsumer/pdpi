@@ -61,7 +61,7 @@ button1 - select SAW wave
 button2 - select SQR wave
 button3 - select TRI wave
 button4 - select SIN wave
-button5 - enable n additional highpass filter
+button5 - enable an additional highpass filter
 ```
 
 
