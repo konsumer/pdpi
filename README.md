@@ -31,7 +31,7 @@ button5 - 0/1 - trigger switch
 button6 - 0/1 - trigger switch
 ```
 
-These are just the controls that made sense for my controller, but I'm happy to add more so they become a standard that others can depend on in their layout for their instrument modules.
+These are just the controls that made sense for my controller, but I'm happy to add more so they become a standard that others can depend on in their layout for their instrument modules. I try to use sensible defaults, so snths will sound good without having the parameter available.
 
 To use the synth, get MAIN.pd running on boot, and send it a `PROGRAM_CHANGE` message to switch instruments.
 
