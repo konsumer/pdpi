@@ -13,7 +13,7 @@ Each instrument is loaded polyphonically (8 voices) and MIDI control messages ar
 These are the control-types I currently have:
 
 ```
-mod - 0-127 modwheel
+mod - 0-127 modulation wheel
 volume - 0-127 slider that makes sense to control main volume
 knob1 - 0-127 basic instrument parameter
 knob2 - 0-127 basic instrument parameter
