@@ -31,7 +31,7 @@ button5 - 0/1 - trigger switch
 button6 - 0/1 - trigger switch
 ```
 
-These are just the controls that made sense for my controller, but I'm happy to add more so they become a standard that others can depend on in their layout for their instrument modules. I try to use sensible defaults, so snths will sound good without having the parameter available.
+These are just the controls that made sense for my controller, but I'm happy to add more so they become a standard that others can depend on in their layout for their instrument modules. I try to use sensible defaults, so synths will sound good without having the parameter control available on any given hardware.
 
 To use the synth, get MAIN.pd running on boot, and send it a `PROGRAM_CHANGE` message to switch instruments.
 
@@ -65,5 +65,67 @@ button5 - enable an additional highpass filter
 ```
 
 
-Eventually, I'll include more complete instructions for setting it all up on a raspberry pi, and making a custom module.
+## Installing on the raspberry pi
+
+* Install [minibian](https://minibianpi.wordpress.com/download/). I am on a Mac, so I used [Apple Pi Baker](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/), but here are [instructions for others](https://www.raspberrypi.org/documentation/installation/installing-images/).
+* [Resize your partition](https://minibianpi.wordpress.com/how-to/resize-sd/)
+* `apt-get update` and `apt-get upgrade`
+* `apt-get install nano unzip`
+* Run `wget https://github.com/konsumer/pdpi/archive/master.zip` and `unzip master.zip -d /`, which will extract this project to `/pdpi-master`
+* `wget https://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf/releases/1.0/Pd-0.43.3-extended-20121004.deb ; dpkg -i Pd-0.43.3-extended-20121004.deb ; apt-get -f install`
+
+After all this, let's get puredata running our `MAIN.pd` on boot. `nano /etc/rc.local` and make it look like this:
+
+```
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+/usr/bin/printf "         My IP address is\033[0;31m `/sbin/ifconfig | grep "inet addr" | grep -v "127.0.0.1" | awk '{ print $2 }' | awk -F: '{ print $2 }'` \033[0m\n" > /dev/console
+
+/usr/bin/printf "\nStarting PdPi...\n" > /dev/console
+/usr/bin/pd-extended -alsamidi -midiindev 1 -nosleep -realtime -nogui -open /pdpi-master/MAIN.pd &
+
+exit 0
+```
+
+
+## additional plugins
+
+Pd-extended has `[plugin~]` which can load LADSPA plugins, many of which are awesome building blocks for extremely complicated and efficient synth/effect modules. If you'd like a whole bunch of LADSPA plugins installed, run `apt-get install vco-plugins wah-plugins zam-plugins swh-plugins tap-plugins ste-plugins mcp-plugins omins liquidsoap-plugin-ladspa invada-studio-plugins-ladspa fil-plugins cmt caps bs2b-ladspa blop blepvco autotalent amb-plugins`
+
+## speed tweaks
+
+Get the fasted microSD card you can find. You can also make it boot faster by editing some files (with `nano`):
+
+### /boot/config.txt
+
+```
+arm_freq=900
+```
+
+### /boot/cmdline.txt
+```
+dwc_otg.lpm_enable=0 root=/dev/mmcblk0p2 rootfstype=ext4 rootflags=commit=120,data=writeback elevator=deadline noatime nodiratime  data=writeback rootwait quiet
+```
+
+### /etc/sysctl.conf:
+```
+vm.dirty_background_ratio = 20
+vm.dirty_expire_centisecs = 0
+vm.dirty_ratio = 80
+vm.dirty_writeback_centisecs = 1200
+vm.overcommit_ratio = 2
+vm.laptop_mode = 5
+vm.swappiness = 10
+```
 
