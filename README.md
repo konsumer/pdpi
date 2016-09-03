@@ -118,7 +118,7 @@ Pd-extended has `[plugin~]` which can load LADSPA plugins, many of which are awe
 
 ## speed tweaks
 
-Get the fasted microSD card you can find. You can also make it boot faster by editing some files (with `nano`):
+Get the fastest microSD card you can find. You can also make the pi boot faster by editing some files (with `nano`):
 
 ### /boot/config.txt
 
@@ -141,4 +141,3 @@ vm.overcommit_ratio = 2
 vm.laptop_mode = 5
 vm.swappiness = 10
 ```
-
