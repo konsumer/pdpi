@@ -70,9 +70,18 @@ button5 - enable an additional highpass filter
 * Install [minibian](https://minibianpi.wordpress.com/download/). I am on a Mac, so I used [Apple Pi Baker](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/), but here are [instructions for others](https://www.raspberrypi.org/documentation/installation/installing-images/).
 * [Resize your partition](https://minibianpi.wordpress.com/how-to/resize-sd/)
 * `apt-get update` and `apt-get upgrade`
-* `apt-get install nano unzip`
+* `apt-get install nano unzip alsa-utils`
 * Run `wget https://github.com/konsumer/pdpi/archive/master.zip` and `unzip master.zip -d /`, which will extract this project to `/pdpi-master`
 * `wget https://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf/releases/1.0/Pd-0.43.3-extended-20121004.deb ; dpkg -i Pd-0.43.3-extended-20121004.deb ; apt-get -f install`
+
+I tested sound like this:
+
+```
+wget http://www.kozco.com/tech/piano2.wav
+aplay piano2.wav
+```
+
+I heard a nice piano sound through the headphone jack.
 
 After all this, let's get puredata running our `MAIN.pd` on boot. `nano /etc/rc.local` and make it look like this:
 
@@ -92,11 +101,15 @@ After all this, let's get puredata running our `MAIN.pd` on boot. `nano /etc/rc.
 
 /usr/bin/printf "         My IP address is\033[0;31m `/sbin/ifconfig | grep "inet addr" | grep -v "127.0.0.1" | awk '{ print $2 }' | awk -F: '{ print $2 }'` \033[0m\n" > /dev/console
 
-/usr/bin/printf "\nStarting PdPi...\n" > /dev/console
-/usr/bin/pd-extended -alsamidi -midiindev 1 -nosleep -realtime -nogui -open /pdpi-master/MAIN.pd &
+/usr/bin/printf "         Starting PdPi...\n" > /dev/console
+/usr/bin/pd-extended -nogui -noadc -alsa -midiindev 1 /pdpi-master/MAIN.pd &
 
 exit 0
 ```
+
+You might need to play around with `-midiindev`, just test it out by running pd-extended on console with different options until you get it working.
+
+If you have a Pi 3, you can [setup wifi & bluetooth](https://minibianpi.wordpress.com/how-to/rpi3/), if you want. I disabled wifi & ethernet by putting a `#` in front of non-`lo` stuff in `/etc/network/interfaces`, so it boots faster and doesn't try to connect to a network when it's being used as an instrument.
 
 
 ## additional plugins
