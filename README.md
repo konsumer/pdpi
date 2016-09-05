@@ -4,6 +4,8 @@ This is a raspberry pi puredata synth.
 
 [![intro video](https://img.youtube.com/vi/vhotjWj_JhU/0.jpg)](https://www.youtube.com/watch?v=vhotjWj_JhU)
 
+This project is unrelated to [this other pdpi](http://pd-la.info/pdpi/), which I found after I named it.
+
 The basic idea is that you can run it headless, and use your MIDI keyboard to control every aspect of it. The modules that get loaded for different `PROGRAM_CHANGE` MIDI messages are located in `modules/`. It's designed to run in pd-extended.
 
 So far, I have a simple demo `phasor~`, `osc~`, and bass-synth (like a 303.)
