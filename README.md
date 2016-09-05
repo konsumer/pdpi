@@ -159,3 +159,7 @@ vm.overcommit_ratio = 2
 vm.laptop_mode = 5
 vm.swappiness = 10
 ```
+
+## non-pi usage
+
+The pdpi was designed to be a cheap & easy computer-based synth, but you might have an old computer laying around that you're not using, and it'd be cheaper to run it there than buy a new pi. We got you covered! Install [debian](https://www.debian.org/distrib/) or [ubuntu server](http://www.ubuntu.com/download/server), [install pd-extended](http://puredata.info/docs/faq/debian), download the project to `/pdpi-master` the same as above, and edit `/etc/rc.local` the same as above, and you should be good to go!
