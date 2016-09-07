@@ -170,7 +170,7 @@ vm.swappiness = 10
 
 RDP is installed, so you can use "remote desktop" on windows, [Cord](http://cord.sourceforge.net/) on mac, and [rdesktop](http://www.rdesktop.org/) on linux.
 
-Once connected, rght-click and choose "Terminal emulator", then type `pd -noadc`
+Once connected, right-click and choose "Terminal emulator", then type `pd -noadc`
 
 ## non-pi usage
 
