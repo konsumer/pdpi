@@ -29,12 +29,12 @@ knob5 - 0-127 basic instrument parameter
 knob6 - 0-127 basic instrument parameter
 knob7 - 0-127 basic instrument parameter
 knob7 - 0-127 basic instrument parameter
-button1 - 0/1 - trigger switch
-button2 - 0/1 - trigger switch
-button3 - 0/1 - trigger switch
-button4 - 0/1 - trigger switch
-button5 - 0/1 - trigger switch
-button6 - 0/1 - trigger switch
+button1 - 0/127 - trigger switch
+button2 - 0/127 - trigger switch
+button3 - 0/127 - trigger switch
+button4 - 0/127 - trigger switch
+button5 - 0/127 - trigger switch
+button6 - 0/127 - trigger switch
 ```
 
 These are just the controls that made sense for my controller, but I'm happy to add more so they become a standard that others can depend on in their layout for their instrument modules. I try to use sensible defaults, so synths will sound good without having the parameter control available on any given hardware.
@@ -132,7 +132,7 @@ If you have a Pi 3, you can [setup wifi & bluetooth](https://minibianpi.wordpres
 
 ## additional plugins
 
-Above, I instructed you to install `pd-plugin` which can load LADSPA plugins (using `plugin~` in puredata,) many of which are awesome building blocks for extremely complicated and efficient synth/effect modules. If you'd like a whole bunch of LADSPA plugins installed, run `apt-get install vco-plugins wah-plugins zam-plugins swh-plugins tap-plugins ste-plugins mcp-plugins omins liquidsoap-plugin-ladspa invada-studio-plugins-ladspa fil-plugins cmt caps bs2b-ladspa blop blepvco autotalent amb-plugins rev-plugins`
+Above, I instructed you to install `pd-plugin` which can load LADSPA plugins (using `plugin~` in puredata,) many of which are awesome building blocks for extremely complicated and efficient synth/effect modules. If you'd like a whole bunch of LADSPA plugins installed, run `apt-get install vco-plugins wah-plugins zam-plugins swh-plugins tap-plugins ste-plugins mcp-plugins omins liquidsoap-plugin-ladspa invada-studio-plugins-ladspa fil-plugins cmt caps bs2b-ladspa blop blepvco autotalent amb-plugins rev-plugins wah-plugins fil-plugins`
 
 ## speed tweaks
 
