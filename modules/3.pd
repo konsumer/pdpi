@@ -21,7 +21,7 @@
 #X obj 707 467 s \$0-bass_ctl;
 #X msg 707 447 hpf \$1;
 #X msg 706 112 tune \$1;
-#X floatatom 706 94 5 0 0 0 - - -;
+#X floatatom 706 94 5 0 0 0 - - -, f 5;
 #X obj 706 134 s \$0-bass_ctl;
 #X msg 706 71 440;
 #X text 726 172 Saw;
@@ -52,15 +52,15 @@
 #X msg 551 306 glide \$1;
 #X text 545 135 Glide;
 #X obj 320 149 vsl 25 128 -1 1 0 0 empty empty empty 0 -8 0 8 -262144
--1 -1 2183 1;
+-1 -1 0 1;
 #X obj 366 149 vsl 25 128 -1 2 0 0 empty empty empty 0 -8 0 8 -262144
--1 -1 12610 1;
+-1 -1 0 1;
 #X obj 412 149 vsl 25 128 -1 2 0 0 empty empty empty 0 -8 0 8 -262144
--1 -1 3903 1;
+-1 -1 0 1;
 #X obj 458 149 vsl 25 128 -1 1 0 0 empty empty empty 0 -8 0 8 -262144
--1 -1 6985 1;
+-1 -1 0 1;
 #X obj 504 149 vsl 25 128 0 1 0 0 empty empty empty 0 -8 0 8 -262144
--1 -1 400 1;
+-1 -1 0 1;
 #X msg 320 106 0.5;
 #X msg 366 106 0.8;
 #X msg 412 106 0.7;
@@ -94,6 +94,7 @@
 #X obj 137 226 / 42.3;
 #X obj 136 251 - 1;
 #X obj 188 226 / 127;
+#X msg 185 322 limit 2;
 #X connect 0 0 4 0;
 #X connect 3 0 76 0;
 #X connect 3 0 77 0;
@@ -140,6 +141,7 @@
 #X connect 67 0 55 0;
 #X connect 67 0 56 0;
 #X connect 67 0 57 0;
+#X connect 67 0 86 0;
 #X connect 68 0 72 0;
 #X connect 69 0 73 0;
 #X connect 70 0 74 0;
@@ -166,3 +168,4 @@
 #X connect 83 0 84 0;
 #X connect 84 0 50 0;
 #X connect 85 0 52 0;
+#X connect 86 0 5 0;

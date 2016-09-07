@@ -76,7 +76,7 @@ button5 - enable an additional highpass filter
 * Install [minibian](https://minibianpi.wordpress.com/download/). I am on a Mac, so I used [Apple Pi Baker](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/), but here are [instructions for others](https://www.raspberrypi.org/documentation/installation/installing-images/).
 * [Resize your partition](https://minibianpi.wordpress.com/how-to/resize-sd/)
 * `apt-get update && apt-get upgrade`
-* `apt-get install xauth nano unzip alsa-utils git`
+* `apt-get install nano unzip alsa-utils git openbox xrdp`
 * Run `git clone https://github.com/konsumer/pdpi.git /pdpi`
 * Run `apt-get install puredata pd-zexy pd-bassemu pd-aubio pd-csound pd-cyclone puredata-utils puredata-extra pd-pdp pd-plugin`
 
@@ -168,18 +168,9 @@ vm.swappiness = 10
 
 ## remote editing
 
-You can install Xwindows on your desktop computer and edit puredata patches remotely (running on pi.) This ensures that you know exactly what extensions are available.
+RDP is installed, so you can use "remote desktop" on windows, [Cord](http://cord.sourceforge.net/) on mac, and [rdesktop](http://www.rdesktop.org/) on linux.
 
-### On Mac
-
-Install [XQuartz](https://www.xquartz.org/)
-
-Now, in a terminal, run `ssh -X root@YOURPI pd -noadc -alsa -midiindev 1`
-
-### On Windows
-
-Install [Xming](http://www.straightrunning.com/XmingNotes/) and [putty](http://www.putty.org/). Ssh into your pi and run `pd -noadc -alsa -midiindev 1`
-
+Once connected, rght-click and choose "Terminal emulator", then type `pd -noadc`
 
 ## non-pi usage
 
