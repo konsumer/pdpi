@@ -6,6 +6,8 @@ This is a raspberry pi puredata synth.
 
 This project is unrelated to [this other pdpi](http://pd-la.info/pdpi/), which I found after I named it.
 
+It uses Puredata vanilla 0.47-1.
+
 The basic idea is that you can run it headless, and use your MIDI keyboard to control every aspect of it. The modules that get loaded for different `PROGRAM_CHANGE` MIDI messages are located in `modules/`. It's designed to run in pd-extended.
 
 So far, I have a simple demo `phasor~`, `osc~`, and bass-synth (like a 303.)
@@ -73,10 +75,11 @@ button5 - enable an additional highpass filter
 
 * Install [minibian](https://minibianpi.wordpress.com/download/). I am on a Mac, so I used [Apple Pi Baker](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/), but here are [instructions for others](https://www.raspberrypi.org/documentation/installation/installing-images/).
 * [Resize your partition](https://minibianpi.wordpress.com/how-to/resize-sd/)
-* `apt-get update` and `apt-get upgrade`
-* `apt-get install nano unzip alsa-utils`
-* Run `wget https://github.com/konsumer/pdpi/archive/master.zip` and `unzip master.zip -d /`, which will extract this project to `/pdpi-master`
-* `wget https://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf/releases/1.0/Pd-0.43.3-extended-20121004.deb ; dpkg -i Pd-0.43.3-extended-20121004.deb ; apt-get -f install`
+* `apt-get update && apt-get upgrade`
+* `apt-get install xauth nano unzip alsa-utils git`
+* Run `git clone https://github.com/konsumer/pdpi.git /pdpi`
+* Run `apt-get install puredata pd-zexy pd-bassemu pd-aubio pd-csound pd-cyclone puredata-utils puredata-extra pd-pdp pd-plugin`
+
 
 I tested sound like this:
 
@@ -106,19 +109,17 @@ After all this, let's get puredata running our `MAIN.pd` on boot. `nano /etc/rc.
 /usr/bin/printf "         My IP address is\033[0;31m `/sbin/ifconfig | grep "inet addr" | grep -v "127.0.0.1" | awk '{ print $2 }' | awk -F: '{ print $2 }'` \033[0m\n" > /dev/console
 
 /usr/bin/printf "         Starting PdPi...\n" > /dev/console
-/usr/bin/pd-extended -nogui -noadc -alsa -midiindev 1 /pdpi-master/MAIN.pd &
+/usr/bin/pd -nogui -noadc -midiindev 1 /pdpi/MAIN.pd &
 
 exit 0
 ```
-
-You might need to play around with `-midiindev`, just test it out by running pd-extended on console with different options until you get it working.
 
 If you have a Pi 3, you can [setup wifi & bluetooth](https://minibianpi.wordpress.com/how-to/rpi3/), if you want. I disabled wifi & ethernet by putting a `#` in front of non-`lo` stuff in `/etc/network/interfaces`, so it boots faster and doesn't try to connect to a network when it's being used as an instrument.
 
 
 ## additional plugins
 
-Pd-extended has `[plugin~]` which can load LADSPA plugins, many of which are awesome building blocks for extremely complicated and efficient synth/effect modules. If you'd like a whole bunch of LADSPA plugins installed, run `apt-get install vco-plugins wah-plugins zam-plugins swh-plugins tap-plugins ste-plugins mcp-plugins omins liquidsoap-plugin-ladspa invada-studio-plugins-ladspa fil-plugins cmt caps bs2b-ladspa blop blepvco autotalent amb-plugins`
+Above, I instructed you to install `pd-plugin` which can load LADSPA plugins (using `plugin~` in puredata,) many of which are awesome building blocks for extremely complicated and efficient synth/effect modules. If you'd like a whole bunch of LADSPA plugins installed, run `apt-get install vco-plugins wah-plugins zam-plugins swh-plugins tap-plugins ste-plugins mcp-plugins omins liquidsoap-plugin-ladspa invada-studio-plugins-ladspa fil-plugins cmt caps bs2b-ladspa blop blepvco autotalent amb-plugins rev-plugins`
 
 ## speed tweaks
 
@@ -134,6 +135,7 @@ arm_freq=900
 
 and here is a pi 3:
 ```
+gpu_mem=16
 arm_freq=1300
 over_voltage=5
 gpu_freq=500
@@ -164,6 +166,21 @@ vm.laptop_mode = 5
 vm.swappiness = 10
 ```
 
+## remote editing
+
+You can install Xwindows on your desktop computer and edit puredata patches remotely (running on pi.) This ensures that you know exactly what extensions are available.
+
+### On Mac
+
+Install [XQuartz](https://www.xquartz.org/)
+
+Now, in a terminal, run `ssh -X root@YOURPI pd -noadc -alsa -midiindev 1`
+
+### On Windows
+
+Install [Xming](http://www.straightrunning.com/XmingNotes/) and [putty](http://www.putty.org/). Ssh into your pi and run `pd -noadc -alsa -midiindev 1`
+
+
 ## non-pi usage
 
-The pdpi was designed to be a cheap & easy computer-based synth, but you might have an old computer laying around that you're not using, and it'd be cheaper to run it there than buy a new pi. We got you covered! Install [debian](https://www.debian.org/distrib/) or [ubuntu server](http://www.ubuntu.com/download/server), [install pd-extended](http://puredata.info/docs/faq/debian), download the project to `/pdpi-master` the same as above, and edit `/etc/rc.local` the same as above, and you should be good to go!
+The pdpi was designed to be a cheap & easy computer-based synth, but you might have an old computer laying around that you're not using, and it'd be cheaper to run it there than buy a new pi. We got you covered! Install [debian](https://www.debian.org/distrib/) or [ubuntu server](http://www.ubuntu.com/download/server), [install pd vanilla 0.47-1](http://msp.ucsd.edu/software.html), download the project to `/pdpi` the same as above, and edit `/etc/rc.local` the same as above, and you should be good to go!
