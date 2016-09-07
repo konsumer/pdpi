@@ -20,7 +20,7 @@ numbered patch;
 #X msg 22 254 \; pd-WORKSPACE clear \; pd-WORKSPACE obj 79 5 inlet
 \; pd-WORKSPACE obj 260 16 inlet \; pd-WORKSPACE obj 27 277 outlet~
 \; pd-WORKSPACE obj 288 188 outlet~ \; pd-WORKSPACE obj 78 114 modules/\$1
-\; pd-WORKSPACE obj 79 29 poly 8 1\; pd-WORKSPACE obj 93 137 modules/\$1
+\; pd-WORKSPACE obj 79 29 poly 8 1 \; pd-WORKSPACE obj 93 137 modules/\$1
 \; pd-WORKSPACE obj 108 160 modules/\$1 \; pd-WORKSPACE obj 124 184
 modules/\$1 \; pd-WORKSPACE obj 78 84 route 1 2 3 4 5 6 7 8 \; pd-WORKSPACE
 obj 78 60 pack 0 0 0 \; pd-WORKSPACE obj 138 206 modules/\$1 \; pd-WORKSPACE
