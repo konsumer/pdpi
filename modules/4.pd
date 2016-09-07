@@ -1,0 +1,64 @@
+#N canvas 410 148 747 484 10;
+#X obj 37 37 inlet note;
+#X obj 63 406 outlet~ left;
+#X obj 148 407 outlet~ right;
+#X obj 178 36 inlet control;
+#X obj 91 362 s_rhodey;
+#X msg 146 299 tone \$1;
+#X obj 110 191 / 127;
+#X obj 112 171 hsl 128 15 0 127 0 1 empty empty tone -2 -8 0 10 -262144
+-1 -1 5900 1;
+#X msg 212 297 decay \$1;
+#X obj 252 190 / 127;
+#X obj 254 170 hsl 128 15 0 127 0 1 empty empty decay -2 -8 0 10 -262144
+-1 -1 4000 1;
+#X obj 252 213 * 5000;
+#X obj 401 187 / 127;
+#X obj 403 167 hsl 128 15 0 127 0 1 empty empty vib_freq -2 -8 0 10
+-262144 -1 -1 4000 1;
+#X msg 290 297 vib-freq \$1;
+#X obj 401 210 * 30;
+#X obj 545 186 / 127;
+#X obj 547 166 hsl 128 15 0 127 0 1 empty empty vib_depth -2 -8 0 10
+-262144 -1 -1 6400 1;
+#X obj 545 209 * 2;
+#X msg 375 295 vib-depth \$1;
+#X msg 467 296 adsr24 \$1;
+#X obj 562 262 hsl 128 15 0 127 0 1 empty empty adsr24 -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 567 314 hsl 128 15 0 127 0 1 empty empty mod -2 -8 0 10 -262144
+-1 -1 6000 1;
+#X msg 467 354 mod \$1;
+#X obj 564 334 / 127;
+#X obj 564 358 * 2;
+#X obj 194 83 route knob1 knob2 knob3 knob4 mod;
+#X connect 0 0 4 0;
+#X connect 3 0 26 0;
+#X connect 4 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 1;
+#X connect 6 0 5 0;
+#X connect 7 0 6 0;
+#X connect 8 0 4 1;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 8 0;
+#X connect 12 0 15 0;
+#X connect 13 0 12 0;
+#X connect 14 0 4 1;
+#X connect 15 0 14 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 0;
+#X connect 19 0 4 1;
+#X connect 20 0 4 1;
+#X connect 21 0 20 0;
+#X connect 22 0 24 0;
+#X connect 23 0 4 1;
+#X connect 24 0 25 0;
+#X connect 25 0 23 0;
+#X connect 26 0 7 0;
+#X connect 26 1 10 0;
+#X connect 26 2 13 0;
+#X connect 26 3 17 0;
+#X connect 26 4 22 0;

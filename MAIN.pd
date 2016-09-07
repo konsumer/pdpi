@@ -1,4 +1,5 @@
 #N canvas 315 91 594 611 10;
+#X declare -path lib/rj/;
 #X obj 53 98 dac~;
 #X obj 141 -14 ctlin;
 #X obj 67 -19 notein;
@@ -46,6 +47,7 @@ connect 12 0 2 0 \; pd-WORKSPACE connect 12 1 3 0 \; pd-WORKSPACE connect
 0 \; pd-MAIN.pd connect 5 0 0 0 \; pd-MAIN.pd connect 5 1 0 1 \; pd-MAIN.pd
 connect 9 0 5 1 \; loadbang bang \;;
 #X obj 382 329 start;
+#X obj 266 -2 declare -path lib/rj/;
 #X connect 1 0 4 1;
 #X connect 1 1 4 0;
 #X connect 2 0 3 0;
