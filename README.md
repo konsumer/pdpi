@@ -6,7 +6,7 @@ This is a raspberry pi puredata synth.
 
 This project is unrelated to [this other pdpi](http://pd-la.info/pdpi/), which I found after I named it.
 
-It uses Puredata vanilla 0.47-1.
+It uses Puredata vanilla 0.46.2 (the version available in debian repos.)
 
 The basic idea is that you can run it headless, and use your MIDI keyboard to control every aspect of it. The modules that get loaded for different `PROGRAM_CHANGE` MIDI messages are located in `modules/`. It's designed to run in pd-extended.
 
