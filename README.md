@@ -70,6 +70,18 @@ button4 - select SIN wave
 button5 - enable an additional highpass filter
 ```
 
+### 4. rhodey
+
+Sort of like a rhodes.
+
+```
+mod - modulation depth
+knob1 - tone
+knob2 - decay
+knob3 - vibe frequency
+knob4 - vibe depth
+```
+
 
 ## Installing on the raspberry pi
 
