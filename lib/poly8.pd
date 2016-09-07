@@ -14,6 +14,11 @@
 #X obj 153 229 \$1;
 #X obj 167 252 \$1;
 #X obj 184 276 \$1;
+#X text 267 52 Load 8 copies of a patch and polyphically route MIDI
+notes to them;
+#X text 264 92 arg1: patch to load;
+#X text 264 117 patch should have 2 inlets for note & control and 2
+outlets for L & R;
 #X connect 0 0 2 0;
 #X connect 0 1 2 1;
 #X connect 0 2 2 2;
