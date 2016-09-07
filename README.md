@@ -114,7 +114,7 @@ After all this, let's get puredata running our `MAIN.pd` on boot. `nano /etc/rc.
 exit 0
 ```
 
-If you have a Pi 3, you can [setup wifi & bluetooth](https://minibianpi.wordpress.com/how-to/rpi3/), if you want. I disabled wifi & ethernet by putting a `#` in front of non-`lo` stuff in `/etc/network/interfaces`, so it boots faster and doesn't try to connect to a network when it's being used as an instrument.
+If you have a Pi 3, you can [setup wifi & bluetooth](https://minibianpi.wordpress.com/how-to/rpi3/), if you want. I didn;t do this because I want it to boot faster.
 
 
 ## additional plugins
