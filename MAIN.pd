@@ -1,65 +1,32 @@
-#N canvas 315 91 594 611 10;
+#N canvas 82 97 594 611 10;
 #X declare -path lib/rj/;
-#X obj 53 98 dac~;
-#X obj 141 -14 ctlin;
-#X obj 67 -19 notein;
-#X obj 54 16 pack 0 0;
-#X obj 137 13 pack 0 0;
-#N canvas 657 161 494 442 WORKSPACE 0;
-#X restore 57 60 pd WORKSPACE;
+#X obj 177 19 dac~;
 #X obj 12 213 pgmin;
 #X msg 59 208 1;
 #X text 90 204 Generates a polyphonic sub-patch with 8 copies of the
 numbered patch;
-#X obj 137 36 control_map;
-#X obj 425 292 del 1000;
-#X obj 439 383 del 1000;
-#X msg 454 321 \; pd dsp 1;
-#X msg 437 413 \; pd-start.pd clear;
-#X obj 16 129 loadbang;
-#X obj 310 408 r loadbang;
-#X msg 22 254 \; pd-WORKSPACE clear \; pd-WORKSPACE obj 79 5 inlet
-\; pd-WORKSPACE obj 260 16 inlet \; pd-WORKSPACE obj 27 277 outlet~
-\; pd-WORKSPACE obj 288 188 outlet~ \; pd-WORKSPACE obj 78 114 modules/\$1
-\; pd-WORKSPACE obj 79 29 poly 8 1 \; pd-WORKSPACE obj 93 137 modules/\$1
-\; pd-WORKSPACE obj 108 160 modules/\$1 \; pd-WORKSPACE obj 124 184
-modules/\$1 \; pd-WORKSPACE obj 78 84 route 1 2 3 4 5 6 7 8 \; pd-WORKSPACE
-obj 78 60 pack 0 0 0 \; pd-WORKSPACE obj 138 206 modules/\$1 \; pd-WORKSPACE
-obj 153 229 modules/\$1 \; pd-WORKSPACE obj 168 252 modules/\$1 \;
-pd-WORKSPACE obj 184 276 modules/\$1 \; pd-WORKSPACE connect 0 0 5
-0 \; pd-WORKSPACE connect 1 0 4 1 \; pd-WORKSPACE connect 1 0 6 1 \;
-pd-WORKSPACE connect 1 0 7 1 \; pd-WORKSPACE connect 1 0 8 1 \; pd-WORKSPACE
-connect 1 0 11 1 \; pd-WORKSPACE connect 1 0 12 1 \; pd-WORKSPACE connect
-1 0 13 1 \; pd-WORKSPACE connect 1 0 14 1 \; pd-WORKSPACE connect 4
-0 2 0 \; pd-WORKSPACE connect 4 1 3 0 \; pd-WORKSPACE connect 5 0 10
-0 \; pd-WORKSPACE connect 5 1 10 1 \; pd-WORKSPACE connect 5 2 10 2
-\; pd-WORKSPACE connect 6 0 2 0 \; pd-WORKSPACE connect 6 1 3 0 \;
-pd-WORKSPACE connect 7 0 2 0 \; pd-WORKSPACE connect 7 1 3 0 \; pd-WORKSPACE
-connect 8 0 2 0 \; pd-WORKSPACE connect 8 1 3 0 \; pd-WORKSPACE connect
-9 0 4 0 \; pd-WORKSPACE connect 9 1 6 0 \; pd-WORKSPACE connect 9 2
-7 0 \; pd-WORKSPACE connect 9 3 8 0 \; pd-WORKSPACE connect 9 4 11
-0 \; pd-WORKSPACE connect 9 5 12 0 \; pd-WORKSPACE connect 9 6 13 0
-\; pd-WORKSPACE connect 9 7 14 0 \; pd-WORKSPACE connect 10 0 9 0 \;
-pd-WORKSPACE connect 11 0 2 0 \; pd-WORKSPACE connect 11 1 3 0 \; pd-WORKSPACE
-connect 12 0 2 0 \; pd-WORKSPACE connect 12 1 3 0 \; pd-WORKSPACE connect
-13 0 2 0 \; pd-WORKSPACE connect 13 1 3 0 \; pd-WORKSPACE connect 14
-0 2 0 \; pd-WORKSPACE connect 14 1 3 0 \; pd-MAIN.pd connect 3 0 5
-0 \; pd-MAIN.pd connect 5 0 0 0 \; pd-MAIN.pd connect 5 1 0 1 \; pd-MAIN.pd
-connect 9 0 5 1 \; loadbang bang \;;
-#X obj 382 329 start;
-#X obj 266 -2 declare -path lib/rj/;
-#X connect 1 0 4 1;
-#X connect 1 1 4 0;
-#X connect 2 0 3 0;
-#X connect 2 1 3 1;
-#X connect 4 0 9 0;
-#X connect 6 0 16 0;
-#X connect 7 0 16 0;
-#X connect 10 0 12 0;
-#X connect 10 0 11 0;
-#X connect 10 0 17 0;
-#X connect 11 0 13 0;
-#X connect 14 0 7 0;
-#X connect 14 0 10 0;
-#X connect 17 0 0 0;
-#X connect 17 0 0 1;
+#X obj 336 32 del 1000;
+#X obj 350 123 del 1000;
+#X msg 365 61 \; pd dsp 1;
+#X msg 348 153 \; pd-start.pd clear;
+#X obj 22 155 loadbang;
+#X obj 177 53 r loadbang;
+#X obj 5 0 declare -path lib/rj/;
+#X obj 150 -8 catch~ L;
+#X obj 216 -9 catch~ R;
+#N canvas 0 22 450 300 WORKSPACE 0;
+#X restore 8 52 pd WORKSPACE;
+#X obj 7 26 control_map;
+#X obj 334 -2 loadbang;
+#X msg 22 254 \; pd-WORKSPACE clear \; pd-WORKSPACE obj 0 0 poly8 modules/\$1
+\; loadbang bang \;;
+#X obj 293 69 start;
+#X connect 1 0 16 0;
+#X connect 2 0 16 0;
+#X connect 4 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 8 0 2 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 1;
+#X connect 15 0 4 0;

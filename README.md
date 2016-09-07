@@ -87,10 +87,11 @@ knob4 - vibe depth
 
 * Install [minibian](https://minibianpi.wordpress.com/download/). I am on a Mac, so I used [Apple Pi Baker](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/), but here are [instructions for others](https://www.raspberrypi.org/documentation/installation/installing-images/).
 * [Resize your partition](https://minibianpi.wordpress.com/how-to/resize-sd/)
+* Reboot and login to pi
 * `apt-get update && apt-get upgrade`
 * `apt-get install nano unzip alsa-utils git`
 * Run `git clone https://github.com/konsumer/pdpi.git /pdpi`
-* Run `apt-get install puredata pd-zexy pd-bassemu pd-aubio pd-csound pd-cyclone puredata-utils puredata-extra pd-pdp pd-plugin`
+* Run `apt-get install puredata gem pd-zexy pd-bassemu pd-aubio pd-csound pd-cyclone puredata-utils puredata-extra pd-pdp pd-plugin`
 
 
 I tested sound like this:
@@ -126,7 +127,7 @@ After all this, let's get puredata running our `MAIN.pd` on boot. `nano /etc/rc.
 exit 0
 ```
 
-If you have a Pi 3, you can [setup wifi & bluetooth](https://minibianpi.wordpress.com/how-to/rpi3/), if you want. I didn;t do this because I want it to boot faster.
+If you have a Pi 3, you can [setup wifi & bluetooth](https://minibianpi.wordpress.com/how-to/rpi3/), if you want. I didn't do this because I want it to boot faster, and I can plug it in when I need networking.
 
 
 ## additional plugins
@@ -180,7 +181,7 @@ vm.swappiness = 10
 
 ## remote editing
 
-You can install Xwindows on your desktop computer and edit puredata patches remotely (running on pi.) This ensures that you know exactly what extensions are available.
+You can install Xwindows on your desktop computer and edit puredata patches remotely (running on pi.) This ensures that you know exactly what puredata extensions are available.
 
 ### On Mac
 
@@ -195,4 +196,4 @@ Install [Xming](http://www.straightrunning.com/XmingNotes/) and [putty](http://w
 
 ## non-pi usage
 
-The pdpi was designed to be a cheap & easy computer-based synth, but you might have an old computer laying around that you're not using, and it'd be cheaper to run it there than buy a new pi. We got you covered! Install [debian](https://www.debian.org/distrib/) or [ubuntu server](http://www.ubuntu.com/download/server), [install pd vanilla 0.47-1](http://msp.ucsd.edu/software.html), download the project to `/pdpi` the same as above, and edit `/etc/rc.local` the same as above, and you should be good to go!
+The pdpi was designed to be a cheap & easy computer-based synth, but you might have an old computer laying around that you're not using, and it'd be cheaper to run it there than buy a new pi. We got you covered! Install [debian](https://www.debian.org/distrib/) or [ubuntu server](http://www.ubuntu.com/download/server), Install puredata and extensions, as above, download this project to `/pdpi` the same as above, and edit `/etc/rc.local` the same as above, and you should be good to go!
