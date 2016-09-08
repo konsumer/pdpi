@@ -179,6 +179,18 @@ vm.laptop_mode = 5
 vm.swappiness = 10
 ```
 
+I also sped it up a little, and disabled the wait for network with this in my `/etc/network/interfaces`:
+
+```
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet dhcp
+```
+
 ## remote editing
 
 You can install Xwindows on your desktop computer and edit puredata patches remotely (running on pi.) This ensures that you know exactly what puredata extensions are available.
