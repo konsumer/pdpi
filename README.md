@@ -45,7 +45,7 @@ Open up the patch in Pd-extended from `modules/{PROGRAM NUMBER}.pd` to see how i
 
 ## module details
 
-### 1. simple square-wave synth
+### 1. simple saw-wave synth
 
 This is just a simple `[phasor~]`.
 
@@ -82,6 +82,13 @@ knob3 - vibe frequency
 knob4 - vibe depth
 ```
 
+### 5. super-saw
+
+Badass phat saw sound. Based on [this](http://www.ghostfact.com/jp-8000-supersaw/) rad breakdown. 
+
+```
+knob1 - detune
+```
 
 ## Installing on the raspberry pi
 
