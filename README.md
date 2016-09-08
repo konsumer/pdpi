@@ -195,6 +195,10 @@ iface eth0 inet dhcp
 
 You can install Xwindows on your desktop computer and edit puredata patches remotely (running on pi.) This ensures that you know exactly what puredata extensions are available.
 
+### On Linux
+
+In a terminal, run `ssh -X root@YOURPI pd -noadc -alsa -midiindev 1`
+
 ### On Mac
 
 Install [XQuartz](https://www.xquartz.org/)
@@ -203,7 +207,7 @@ Now, in a terminal, run `ssh -X root@YOURPI pd -noadc -alsa -midiindev 1`
 
 ### On Windows
 
-Install [Xming](http://www.straightrunning.com/XmingNotes/) and [putty](http://www.putty.org/). Ssh into your pi and run `pd -noadc -alsa -midiindev 1`
+Install [Xming](http://www.straightrunning.com/XmingNotes/) and [putty](http://www.putty.org/). Ssh into your pi and run `pd -noadc -alsa -midiindev 1`. I don't have a Windows box handy, so I'd appreciate a Windows-person documenting this.
 
 
 ## non-pi usage
