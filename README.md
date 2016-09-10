@@ -10,11 +10,11 @@ It uses Puredata vanilla 0.46.2 (the version available in debian repos.)
 
 The basic idea is that you can run it headless, and use your MIDI keyboard to control every aspect of it. The modules that get loaded for different `PROGRAM_CHANGE` MIDI messages are located in `modules/`. It's designed to run in pd-extended.
 
-So far, I have a simple demo `phasor~`, `osc~`, and bass-synth (like a 303.)
+So far, I have a simple demo `phasor~`, `osc~`, a bass-synth (like a 303,) a rhodes-like fm synth, and a super-saw washy witch-house type synth.
 
-Making instruments is meant to be very simple.  There are 2 inlets and 2 outlets. top-left inlet is a note-pair (note-number and velocity) and the right inlet is mapped control pairs (eg "knob1 100".) Knob values are MIDI scale (0-127) and buttons are 0 or 1 (1 when pressed.)
+Making instruments is meant to be very simple.  There are 2 inlets and 2 outlets. top-left inlet is a note-pair (note-number and velocity) and the right inlet is mapped control pairs (eg "knob1 100".) Knob values are MIDI scale (0-127) and buttons are 0 or 127 (127 when pressed.)
 
-Each instrument is loaded polyphonically (8 voices) and MIDI control messages are mapped, so you can make your own instrument map (knobs and buttons) for controls to make it easier to use with your MIDI controller. Open up `control_map.pd` in puredata to make a map for your own MIDI controller. I made one for my Oxygen 25.
+MIDI control messages are mapped, so you can make your own instrument map (knobs and buttons) for controls to make it easier to use with your MIDI controller. Open up `control_map.pd` in puredata to make a map for your own MIDI controller. I made one for my Oxygen 25.
 
 These are the control-types I currently have:
 
@@ -41,21 +41,21 @@ These are just the controls that made sense for my controller, but I'm happy to 
 
 To use the synth, get MAIN.pd running on boot, and send it a `PROGRAM_CHANGE` message to switch instruments.
 
-Open up the patch in Pd-extended from `modules/{PROGRAM NUMBER}.pd` to see how it works.
+Open up the patch in puredata from `modules/{PROGRAM NUMBER}.pd` to see how it works.
 
 ## module details
 
 ### 1. simple saw-wave synth
 
-This is just a simple `[phasor~]`.
+This is just a simple `[phasor~]`. It's made to load 8-voice polyphony, so you can see how that works.
 
 ### 2. simple sine-wave synth
 
-This is just a simple `[osc~]`.
+This is just a simple `[osc~]` with 1 voice.
 
 ### 3. bass synth
 
-This is sort of like a 303. It's an analog bass synth.
+This is sort of like a 303. It's an analog bass synth with 1 voice.
 
 ```
 knob1 - filter cutoff
@@ -72,7 +72,7 @@ button5 - enable an additional highpass filter
 
 ### 4. rhodey
 
-Sort of like a rhodes.
+Sort of like a rhodes, with 4 voice polyphony.
 
 ```
 mod - modulation depth
@@ -84,7 +84,7 @@ knob4 - vibe depth
 
 ### 5. super-saw
 
-Badass phat saw sound. Based on [this](http://www.ghostfact.com/jp-8000-supersaw/) rad breakdown. 
+Badass phat saw sound. Based on [this](http://www.ghostfact.com/jp-8000-supersaw/) rad breakdown. Setup with 4-voice polyphony.
 
 ```
 knob1 - detune

@@ -1,14 +1,11 @@
-#N canvas 165 80 594 611 10;
+#N canvas 63 144 568 498 10;
 #X declare -path lib/rj/;
 #X declare -path lib/;
 #X obj 177 19 dac~;
-#X obj 12 213 pgmin;
-#X msg 59 208 1;
-#X text 90 204 Generates a polyphonic sub-patch with 8 copies of the
-numbered patch;
+#X msg 12 106 1;
 #X obj 358 120 del 1000;
 #X msg 373 58 \; pd dsp 1;
-#X obj 22 155 loadbang;
+#X obj 12 82 loadbang;
 #X obj 177 53 r loadbang;
 #X obj 5 0 declare -path lib/rj/;
 #X obj 150 -8 catch~ L;
@@ -20,43 +17,24 @@ numbered patch;
 #X obj 5 25 declare -path lib/;
 #X obj 264 92 init;
 #X msg 356 150 \; pd-startsound.pd clear;
+#X text 8 251 Generates a sub-patch with a copy of the numbered patch
+;
+#X msg 18 310 \; pd-WORKSPACE clear \; pd-WORKSPACE obj 78 114 modules/\$1/main
+\; pd-WORKSPACE obj 288 188 throw~ R \; pd-WORKSPACE obj 27 277 throw~
+L \; pd-WORKSPACE obj 260 16 r control \; pd-WORKSPACE obj 79 5 r note
+\; pd-WORKSPACE connect 0 0 2 0 \; pd-WORKSPACE connect 0 1 1 0 \;
+pd-WORKSPACE connect 3 0 0 1 \; pd-WORKSPACE connect 4 0 0 0 \; loadbang
+bang \;;
+#X obj 15 276 r programchange;
+#X obj 12 132 s programchange;
 #X obj 264 72 startsound;
-#X floatatom 123 182 5 0 0 0 - - -, f 5;
-#X msg 22 254 \; pd-WORKSPACE clear \; pd-WORKSPACE obj 78 114 modules/\$1
-\; pd-WORKSPACE obj 79 29 poly 8 1 \; pd-WORKSPACE obj 93 137 modules/\$1
-\; pd-WORKSPACE obj 108 160 modules/\$1 \; pd-WORKSPACE obj 124 184
-modules/\$1 \; pd-WORKSPACE obj 78 84 route 1 2 3 4 5 6 7 8 \; pd-WORKSPACE
-obj 78 60 pack 0 0 0 \; pd-WORKSPACE obj 138 206 modules/\$1 \; pd-WORKSPACE
-obj 153 229 modules/\$1 \; pd-WORKSPACE obj 168 252 modules/\$1 \;
-pd-WORKSPACE obj 184 276 modules/\$1 \; pd-WORKSPACE obj 288 188 throw~
-R \; pd-WORKSPACE obj 27 277 throw~ L \; pd-WORKSPACE obj 260 16 r
-control \; pd-WORKSPACE obj 79 5 r note \; pd-WORKSPACE connect 0 0
-12 0 \; pd-WORKSPACE connect 0 1 11 0 \; pd-WORKSPACE connect 1 0 6
-0 \; pd-WORKSPACE connect 1 1 6 1 \; pd-WORKSPACE connect 1 2 6 2 \;
-pd-WORKSPACE connect 2 0 12 0 \; pd-WORKSPACE connect 2 1 11 0 \; pd-WORKSPACE
-connect 3 0 12 0 \; pd-WORKSPACE connect 3 1 11 0 \; pd-WORKSPACE connect
-4 0 12 0 \; pd-WORKSPACE connect 4 1 11 0 \; pd-WORKSPACE connect 5
-0 0 0 \; pd-WORKSPACE connect 5 1 2 0 \; pd-WORKSPACE connect 5 2 3
-0 \; pd-WORKSPACE connect 5 3 4 0 \; pd-WORKSPACE connect 5 4 7 0 \;
-pd-WORKSPACE connect 5 5 8 0 \; pd-WORKSPACE connect 5 6 9 0 \; pd-WORKSPACE
-connect 5 7 10 0 \; pd-WORKSPACE connect 6 0 5 0 \; pd-WORKSPACE connect
-7 0 12 0 \; pd-WORKSPACE connect 7 1 11 0 \; pd-WORKSPACE connect 8
-0 12 0 \; pd-WORKSPACE connect 8 1 11 0 \; pd-WORKSPACE connect 9 0
-12 0 \; pd-WORKSPACE connect 9 1 11 0 \; pd-WORKSPACE connect 10 0
-12 0 \; pd-WORKSPACE connect 10 1 11 0 \; pd-WORKSPACE connect 13 0
-0 1 \; pd-WORKSPACE connect 13 0 2 1 \; pd-WORKSPACE connect 13 0 3
-1 \; pd-WORKSPACE connect 13 0 4 1 \; pd-WORKSPACE connect 13 0 7 1
-\; pd-WORKSPACE connect 13 0 8 1 \; pd-WORKSPACE connect 13 0 9 1 \;
-pd-WORKSPACE connect 13 0 10 1 \; pd-WORKSPACE connect 14 0 1 0 \;
-loadbang bang \;;
 #X connect 1 0 18 0;
-#X connect 1 0 19 0;
-#X connect 2 0 19 0;
-#X connect 4 0 16 0;
-#X connect 5 0 0 0;
-#X connect 5 0 0 0;
-#X connect 6 0 2 0;
-#X connect 9 0 0 0;
-#X connect 10 0 0 1;
-#X connect 13 0 5 0;
-#X connect 13 0 4 0;
+#X connect 2 0 14 0;
+#X connect 3 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 11 0 3 0;
+#X connect 11 0 2 0;
+#X connect 17 0 16 0;

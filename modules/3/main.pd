@@ -95,6 +95,7 @@
 #X obj 568 126 moses 1;
 #X obj 582 150 moses 1;
 #X obj 626 343 moses 1;
+#X text 105 5 monophonic bass synth (303-like);
 #X connect 0 0 4 0;
 #X connect 3 0 72 0;
 #X connect 3 0 73 0;
