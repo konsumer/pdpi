@@ -84,7 +84,7 @@ knob4 - vibe depth
 
 ### 5. super-saw
 
-Badass phat saw sound. Based on [this](http://www.ghostfact.com/jp-8000-supersaw/) rad breakdown. Setup with 4-voice polyphony.
+Badass phat saw sound. Based on [this](http://www.ghostfact.com/jp-8000-supersaw/) rad breakdown. Setup with 4 voice polyphony.
 
 ```
 knob1 - detune
