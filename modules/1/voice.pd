@@ -1,0 +1,15 @@
+#N canvas 176 107 450 300 10;
+#X obj 116 114 mtof;
+#X obj 119 165 *~;
+#X obj 173 139 / 127;
+#X obj 118 139 phasor~;
+#X obj 120 83 unpack 0 0;
+#X obj 116 27 inlet;
+#X obj 114 207 outlet~;
+#X connect 0 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 4 1 2 0;
+#X connect 5 0 4 0;
