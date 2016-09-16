@@ -7,7 +7,7 @@
 #X obj 185 26 catch~ L;
 #X obj 251 25 catch~ R;
 #N canvas 819 204 546 447 WORKSPACE 0;
-#X restore 337 59 pd WORKSPACE;
+#X restore 178 208 pd WORKSPACE;
 #X obj 40 59 declare -path lib/;
 #X obj 288 126 init;
 #X text 42 182 Generates a sub-patch with a copy of the numbered patch
