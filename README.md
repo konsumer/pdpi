@@ -28,7 +28,7 @@ knob4 - 0-127 basic instrument parameter
 knob5 - 0-127 basic instrument parameter
 knob6 - 0-127 basic instrument parameter
 knob7 - 0-127 basic instrument parameter
-knob7 - 0-127 basic instrument parameter
+knob8 - 0-127 basic instrument parameter
 button1 - 0/127 - trigger switch
 button2 - 0/127 - trigger switch
 button3 - 0/127 - trigger switch
