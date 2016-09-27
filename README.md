@@ -8,11 +8,11 @@ This project is unrelated to [this other pdpi](http://pd-la.info/pdpi/), which I
 
 It uses Puredata vanilla 0.46.2 (the version available in debian repos.)
 
-The basic idea is that you can run it headless, and use your MIDI keyboard to control every aspect of it. The modules that get loaded for different `PROGRAM_CHANGE` MIDI messages are located in `modules/`. It's designed to run in pd-extended.
+The basic idea is that you can run it headless, and use your MIDI keyboard to control every aspect of it. The modules that get loaded for different `PROGRAM_CHANGE` MIDI messages are located in `modules/`.
 
 So far, I have a simple demo `phasor~`, `osc~`, a bass-synth (like a 303,) a rhodes-like fm synth, and a super-saw washy witch-house type synth.
 
-Making instruments is meant to be very simple.  There are 2 inlets and 2 outlets. top-left inlet is a note-pair (note-number and velocity) and the right inlet is mapped control pairs (eg "knob1 100".) Knob values are MIDI scale (0-127) and buttons are 0 or 127 (127 when pressed.)
+Making instruments is meant to be very simple.  There are 2 inlets and 2 outlets. top-left inlet is a note-pair (note-number and velocity) and the right inlet is mapped control pair messages (eg "knob1 100".) Knob values are MIDI scale (0-127) and buttons are 0 or 127 (127 when pressed.)
 
 MIDI control messages are mapped, so you can make your own instrument map (knobs and buttons) for controls to make it easier to use with your MIDI controller. Open up `control_map.pd` in puredata to make a map for your own MIDI controller. I made one for my Oxygen 25.
 
@@ -185,7 +185,7 @@ You may be able to get it higher. Check out [this for pi 3](https://www.raspberr
 
 ### /boot/cmdline.txt
 ```
-dwc_otg.lpm_enable=0 root=/dev/mmcblk0p2 rootfstype=ext4 rootflags=commit=120,data=writeback elevator=deadline noatime nodiratime  data=writeback rootwait quiet
+dwc_otg.lpm_enable=0 root=/dev/mmcblk0p2 rootfstype=ext4 rootflags=commit=120,data=writeback elevator=deadline noatime nodiratime data=writeback rootwait quiet
 ```
 
 ### /etc/sysctl.conf:
