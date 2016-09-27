@@ -1,4 +1,4 @@
-#N canvas 63 144 504 458 10;
+#N canvas 35 300 504 458 10;
 #X declare -path lib/rj/;
 #X declare -path lib/;
 #X obj 212 53 dac~;
@@ -9,7 +9,6 @@
 #N canvas 819 204 546 447 WORKSPACE 0;
 #X restore 178 208 pd WORKSPACE;
 #X obj 40 59 declare -path lib/;
-#X obj 288 126 init;
 #X text 42 182 Generates a sub-patch with a copy of the numbered patch
 ;
 #X msg 52 241 \; pd-WORKSPACE clear \; pd-WORKSPACE obj 78 114 modules/\$1/main
@@ -20,6 +19,7 @@ pd-WORKSPACE connect 3 0 0 1 \; pd-WORKSPACE connect 4 0 0 0 \; loadbang
 bang \;;
 #X obj 49 207 r programchange;
 #X text 41 126 edit this to configure initializaton ->;
+#X obj 288 126 init;
 #X connect 3 0 0 0;
 #X connect 4 0 0 1;
-#X connect 10 0 9 0;
+#X connect 9 0 8 0;
