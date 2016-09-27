@@ -100,7 +100,7 @@ knob1 - detune
 * `apt-get update && apt-get upgrade`
 * `apt-get install nano unzip alsa-utils git`
 * Run `git clone https://github.com/konsumer/pdpi.git /pdpi`
-* Run `apt-get install puredata gem pd-zexy pd-bassemu pd-aubio pd-csound pd-cyclone puredata-utils puredata-extra pd-pdp pd-plugin`
+* Run `apt-get install puredata gem pd-zexy pd-bassemu pd-aubio pd-csound pd-cyclone puredata-utils puredata-extra pd-pdp pd-plugin pd-libdir puredata-import`
 
 
 I tested sound like this:
