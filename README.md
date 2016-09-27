@@ -143,6 +143,17 @@ If you have a Pi 3, you can [setup wifi & bluetooth](https://minibianpi.wordpres
 
 Above, I instructed you to install `pd-plugin` which can load LADSPA plugins (using `plugin~` in puredata,) many of which are awesome building blocks for extremely complicated and efficient synth/effect modules. If you'd like a whole bunch of LADSPA plugins installed, run `apt-get install vco-plugins wah-plugins zam-plugins swh-plugins tap-plugins ste-plugins mcp-plugins omins liquidsoap-plugin-ladspa invada-studio-plugins-ladspa fil-plugins cmt caps bs2b-ladspa blop blepvco autotalent amb-plugins rev-plugins wah-plugins fil-plugins`. After this, you can run [this script](https://gist.github.com/konsumer/84ebf8837cdd80fde839) to generate some nice commented patches all ready for pdpi! You will probably have to tweak some of them a bit to make work right (toggle might be better than slider, range might not be good)but for the most part they just work.
 
+Here is how to get it on the pi and run it:
+
+```
+wget https://gist.githubusercontent.com/konsumer/84ebf8837cdd80fde839/raw/ca79c60c8a54f053f3c117b06392b0956f9cbdc3/wrap_ladspa.py
+mkdir /pdpi/lib/ladspa
+cd /pdpi/lib
+python wrap_ladspa.py
+```
+
+Now you can add `[ladpsa/whatever]` to your patches.
+
 ## speed tweaks
 
 Get the fastest microSD card you can find. You can also make the pi boot faster by editing some files (with `nano`):
