@@ -146,9 +146,9 @@ Above, I instructed you to install `pd-plugin` which can load LADSPA plugins (us
 Here is how to get it on the pi and run it:
 
 ```
-wget https://gist.githubusercontent.com/konsumer/84ebf8837cdd80fde839/raw/ca79c60c8a54f053f3c117b06392b0956f9cbdc3/wrap_ladspa.py
-mkdir /pdpi/lib/ladspa
 cd /pdpi/lib
+wget https://gist.githubusercontent.com/konsumer/84ebf8837cdd80fde839/raw/ca79c60c8a54f053f3c117b06392b0956f9cbdc3/wrap_ladspa.py
+mkdir ladspa
 python wrap_ladspa.py
 ```
 
