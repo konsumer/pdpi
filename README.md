@@ -160,7 +160,7 @@ Get the fastest microSD card you can find. You can also make the pi boot faster 
 
 ### /boot/config.txt
 
-You can pverclock. Here is what it looks like for a pi 2:
+You can overclock. Here is what it looks like for a pi 2:
 
 ```
 arm_freq=900
@@ -181,7 +181,7 @@ over_voltage_sdram_i=4
 over_voltage_sdram_c=4
 ```
 
-You may be able to get it higher. Check out [this for pi 3](https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=138123) and [this for pi 2](https://haydenjames.io/raspberry-pi-2-overclock/)
+You may be able to get it higher. Check out [this for pi 3](https://www.raspberrypi.org/forums/viewtopic.php?f=66&t=138123) and [this for pi 2](https://haydenjames.io/raspberry-pi-2-overclock/). I managed to use these settings without a heatsink, or any change in the hardware.
 
 ### /boot/cmdline.txt
 ```
