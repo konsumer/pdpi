@@ -1,0 +1,61 @@
+#N canvas 65 333 912 375 10;
+#X obj 282 208 tb303~;
+#X obj 163 109 keyarp;
+#X obj 256 25 inlet note;
+#X obj 462 12 inlet control;
+#X obj 274 327 outlet~ L;
+#X obj 352 328 outlet~ R;
+#X obj 159 143 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 156 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 92 21 r loadbang;
+#X obj 183 71 nbx 3 14 0 999 0 1 empty empty bpm 0 -8 0 10 -262144
+-1 -1 474 256;
+#X msg 707 108 mporta \$1;
+#X msg 305 114 mcutoff \$1;
+#X msg 581 109 menv \$1;
+#X msg 514 111 mdecay \$1;
+#X msg 636 109 maccent \$1;
+#X obj 815 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 788 75 sel 0;
+#X msg 814 98 bang;
+#X msg 817 147 osc \$1;
+#X msg 297 70 100;
+#X obj 460 39 route knob1 knob2 knob3 knob4 knob5 knob6 knob7 button1
+;
+#X obj 192 14 * 4;
+#X obj 190 36 + 10;
+#X msg 454 110 mres \$1;
+#X connect 0 0 4 0;
+#X connect 0 0 5 0;
+#X connect 1 0 6 0;
+#X connect 1 1 0 0;
+#X connect 2 0 1 2;
+#X connect 3 0 20 0;
+#X connect 7 0 1 0;
+#X connect 8 0 7 0;
+#X connect 8 0 19 0;
+#X connect 9 0 1 1;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 18 0;
+#X connect 16 1 17 0;
+#X connect 17 0 15 0;
+#X connect 18 0 0 0;
+#X connect 19 0 11 0;
+#X connect 20 0 11 0;
+#X connect 20 1 21 0;
+#X connect 20 2 23 0;
+#X connect 20 3 13 0;
+#X connect 20 4 12 0;
+#X connect 20 5 14 0;
+#X connect 20 6 10 0;
+#X connect 20 7 16 0;
+#X connect 21 0 22 0;
+#X connect 22 0 9 0;
+#X connect 23 0 0 0;

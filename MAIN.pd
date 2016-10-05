@@ -1,6 +1,7 @@
-#N canvas 35 300 504 458 10;
+#N canvas 111 221 504 458 10;
 #X declare -path lib/rj/;
 #X declare -path lib/;
+#X declare -path modules/;
 #X obj 212 53 dac~;
 #X obj 212 87 r loadbang;
 #X obj 40 34 declare -path lib/rj/;
@@ -20,6 +21,7 @@ bang \;;
 #X obj 49 207 r programchange;
 #X text 41 126 edit this to configure initializaton ->;
 #X obj 288 126 init;
+#X obj 40 83 declare -path modules/;
 #X connect 3 0 0 0;
 #X connect 4 0 0 1;
 #X connect 9 0 8 0;

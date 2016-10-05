@@ -26,6 +26,8 @@
 118;
 #X obj 581 45 pgmin;
 #X obj 581 73 s programchange;
+#X obj 19 164 bendin;
+#X msg 19 189 bend \$1;
 #X connect 0 0 16 0;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
@@ -65,3 +67,5 @@
 #X connect 23 14 19 0;
 #X connect 23 15 20 0;
 #X connect 24 0 25 0;
+#X connect 26 0 27 0;
+#X connect 27 0 16 0;

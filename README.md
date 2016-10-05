@@ -43,7 +43,7 @@ To use the synth, get MAIN.pd running on boot, and send it a `PROGRAM_CHANGE` me
 
 Open up the patch in puredata from `modules/{PROGRAM NUMBER}.pd` to see how it works.
 
-If you don't have a MIDI keyboard handy, you can open `lib/vcontroller.pd` to send messages using your computer keyboard.
+If you don't have a MIDI keyboard handy, you can open `modules/vcontroller.pd` to send messages using your computer keyboard.
 
 ## module details
 
