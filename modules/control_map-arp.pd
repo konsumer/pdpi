@@ -11,8 +11,8 @@
 #X msg 563 345 knob8 \$1;
 #X obj 163 12 ctlin;
 #X obj 167 45 pack 0 0;
-#X obj 542 149 notein;
-#X obj 540 178 pack 0 0;
+#X obj 696 139 notein;
+#X obj 694 168 pack 0 0;
 #X obj 572 247 s note;
 #X obj 296 513 s control;
 #X msg 207 398 button1 \$1;
@@ -61,9 +61,11 @@
 #X obj 173 395 makenote 100 100;
 #X obj 180 424 pack 0 0;
 #X obj 49 112 expr 60000 / $f1;
-#X obj 48 90 route volume;
+#X obj 64 64 route volume;
 #X obj 181 455 outlet note;
 #X obj 424 117 inlet note;
+#X obj 305 37 text define notes;
+#X obj 60 88 * 4;
 #X connect 0 0 31 0;
 #X connect 1 0 24 0;
 #X connect 2 0 24 0;
@@ -101,11 +103,12 @@
 #X connect 28 1 29 1;
 #X connect 29 0 32 0;
 #X connect 30 0 27 1;
-#X connect 31 0 30 0;
+#X connect 31 0 35 0;
 #X connect 33 0 5 0;
+#X connect 35 0 30 0;
 #X restore 566 226 pd arp;
 #X text 245 16 Arpeggiator MIDI Map;
-#X obj 621 180 r control;
+#X obj 558 175 r control;
 #X connect 0 0 15 0;
 #X connect 1 0 15 0;
 #X connect 2 0 15 0;
@@ -121,7 +124,7 @@
 #X connect 11 0 22 0;
 #X connect 12 0 13 0;
 #X connect 12 1 13 1;
-#X connect 13 0 27 0;
+#X connect 13 0 27 1;
 #X connect 16 0 15 0;
 #X connect 17 0 15 0;
 #X connect 18 0 15 0;
@@ -148,4 +151,4 @@
 #X connect 25 0 26 0;
 #X connect 26 0 15 0;
 #X connect 27 0 14 0;
-#X connect 29 0 27 1;
+#X connect 29 0 27 0;
