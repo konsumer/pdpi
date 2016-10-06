@@ -41,7 +41,7 @@ These are just the controls that made sense for my controller, but I'm happy to 
 
 To use the synth, get MAIN.pd running on boot, and send it a `PROGRAM_CHANGE` message to switch instruments.
 
-Open up the patch in puredata from `modules/{PROGRAM NUMBER}.pd` to see how it works.
+Open up the patch in puredata from `modules/{PROGRAM NUMBER}/main.pd` to see how it works.
 
 If you don't have a MIDI keyboard handy, you can open `modules/vcontroller.pd` to send messages using your computer keyboard.
 
