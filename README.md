@@ -4,7 +4,7 @@ This is a raspberry pi puredata synth.
 
 [![intro video](https://img.youtube.com/vi/vhotjWj_JhU/0.jpg)](https://www.youtube.com/watch?v=vhotjWj_JhU)
 
-This project is unrelated to [this other pdpi](http://pd-la.info/pdpi/), which I found after I named it.
+This project is unrelated to [this other pdpi](http://pd-la.info/pdpi/), which I found after I named it. If anyone has any suggestions for a better name, I'm so in!
 
 It uses Puredata vanilla 0.46.2 (the version available in debian repos.)
 
