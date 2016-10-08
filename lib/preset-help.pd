@@ -1,0 +1,13 @@
+#N canvas 545 308 450 300 10;
+#X obj 88 217 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8300 1;
+#X obj 86 238 preset preset-help;
+#X text 82 58 in - value to set;
+#X text 82 75 out - value from restore;
+#X text 87 122 red button - save preset;
+#X text 87 137 green button - restore preset (also called on load)
+;
+#X text 85 170 argument 1 - name of preset to save;
+#X text 80 19 allows you to save one setting.;
+#X connect 0 0 1 0;
+#X connect 1 0 0 0;
