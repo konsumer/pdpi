@@ -95,9 +95,10 @@ knob1 - detune
 ## Installing on the raspberry pi
 
 * Install [minibian](https://minibianpi.wordpress.com/download/). I am on a Mac, so I used [Apple Pi Baker](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/), but here are [instructions for others](https://www.raspberrypi.org/documentation/installation/installing-images/).
-* Login and resize your partition with `raspi-config --expand-rootfs`
+* Login with `root` (password: `raspberry`)
+* `apt update && apt install raspi-config` and resize your partition with `raspi-config --expand-rootfs`
 * Reboot and login to pi
-* `apt-get update && apt-get upgrade`
+* `apt-get upgrade`
 * `apt-get install nano unzip alsa-utils git`
 * Run `git clone https://github.com/konsumer/pdpi.git /pdpi`
 * Run `apt-get install puredata gem puredata-utils puredata-extra puredata-import pd-3dp pd-arraysize pd-aubio pd-bassemu pd-beatpipe pd-boids pd-bsaylor pd-chaos pd-comport pd-csound pd-cxc pd-cyclone pd-earplug pd-ekext pd-ext13 pd-fftease pd-flite pd-freeverb pd-ggee pd-hcs pd-hid pd-iemambi pd-iemlib pd-iemmatrix pd-iemnet pd-jmmmp pd-libdir pd-list-abs pd-lua pd-lyonpotpourri pd-mapping pd-markex pd-maxlib pd-mjlib pd-moonlib pd-motex pd-osc pd-pan pd-pddp pd-pdogg pd-pdp pd-pdstring pd-plugin pd-pmpd pd-purepd pd-readanysf pd-sigpack pd-smlib pd-unauthorized pd-vbap pd-wiimote pd-windowing pd-zexy`
