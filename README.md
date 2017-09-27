@@ -95,7 +95,7 @@ knob1 - detune
 ## Installing on the raspberry pi
 
 * Install [minibian](https://minibianpi.wordpress.com/download/). I am on a Mac, so I used [Apple Pi Baker](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/), but here are [instructions for others](https://www.raspberrypi.org/documentation/installation/installing-images/).
-* [Resize your partition](https://minibianpi.wordpress.com/how-to/resize-sd/)
+* Resize your partition with `raspi-config --expand-rootfs`
 * Reboot and login to pi
 * `apt-get update && apt-get upgrade`
 * `apt-get install nano unzip alsa-utils git`
