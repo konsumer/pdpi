@@ -98,10 +98,10 @@ knob1 - detune
 * Login with `root` (password: `raspberry`)
 * `apt update && apt install raspi-config` and resize your partition with `raspi-config --expand-rootfs`
 * Reboot and login to pi
-* `apt-get upgrade`
-* `apt-get install nano unzip alsa-utils git`
+* `apt upgrade`
+* `apt install nano unzip alsa-utils git`
 * Run `git clone https://github.com/konsumer/pdpi.git /pdpi`
-* Run `apt-get install puredata gem puredata-utils puredata-extra puredata-import pd-3dp pd-arraysize pd-aubio pd-bassemu pd-beatpipe pd-boids pd-bsaylor pd-chaos pd-comport pd-csound pd-cxc pd-cyclone pd-earplug pd-ekext pd-ext13 pd-fftease pd-flite pd-freeverb pd-ggee pd-hcs pd-hid pd-iemambi pd-iemlib pd-iemmatrix pd-iemnet pd-jmmmp pd-libdir pd-list-abs pd-lua pd-lyonpotpourri pd-mapping pd-markex pd-maxlib pd-mjlib pd-moonlib pd-motex pd-osc pd-pan pd-pddp pd-pdogg pd-pdp pd-pdstring pd-plugin pd-pmpd pd-purepd pd-readanysf pd-sigpack pd-smlib pd-unauthorized pd-vbap pd-wiimote pd-windowing pd-zexy`
+* Run `apt install puredata gem puredata-utils puredata-extra puredata-import pd-3dp pd-arraysize pd-aubio pd-bassemu pd-beatpipe pd-boids pd-bsaylor pd-chaos pd-comport pd-csound pd-cxc pd-cyclone pd-earplug pd-ekext pd-ext13 pd-fftease pd-flite pd-freeverb pd-ggee pd-hcs pd-hid pd-iemambi pd-iemlib pd-iemmatrix pd-iemnet pd-jmmmp pd-libdir pd-list-abs pd-lua pd-lyonpotpourri pd-mapping pd-markex pd-maxlib pd-mjlib pd-moonlib pd-motex pd-osc pd-pan pd-pddp pd-pdogg pd-pdp pd-pdstring pd-plugin pd-pmpd pd-purepd pd-readanysf pd-sigpack pd-smlib pd-unauthorized pd-vbap pd-wiimote pd-windowing pd-zexy`
 
 
 I tested sound like this:
@@ -142,7 +142,7 @@ If you have a Pi 3, you can [setup wifi & bluetooth](https://minibianpi.wordpres
 
 ## additional plugins
 
-Above, I instructed you to install `pd-plugin` which can load LADSPA plugins (using `plugin~` in puredata,) many of which are awesome building blocks for extremely complicated and efficient synth/effect modules. If you'd like a whole bunch of LADSPA plugins installed, run `apt-get install vco-plugins wah-plugins zam-plugins swh-plugins tap-plugins ste-plugins mcp-plugins omins liquidsoap-plugin-ladspa invada-studio-plugins-ladspa fil-plugins cmt caps bs2b-ladspa blop blepvco autotalent amb-plugins rev-plugins wah-plugins fil-plugins`. After this, you can run [this script](https://gist.github.com/konsumer/84ebf8837cdd80fde839) to generate some nice commented patches all ready for pdpi! You will probably have to tweak some of them a bit to make work right (toggle might be better than slider, range might not be good)but for the most part they just work.
+Above, I instructed you to install `pd-plugin` which can load LADSPA plugins (using `plugin~` in puredata,) many of which are awesome building blocks for extremely complicated and efficient synth/effect modules. If you'd like a whole bunch of LADSPA plugins installed, run `apt install vco-plugins wah-plugins zam-plugins swh-plugins tap-plugins ste-plugins mcp-plugins omins liquidsoap-plugin-ladspa invada-studio-plugins-ladspa fil-plugins cmt caps bs2b-ladspa blop blepvco autotalent amb-plugins rev-plugins wah-plugins fil-plugins`. After this, you can run [this script](https://gist.github.com/konsumer/84ebf8837cdd80fde839) to generate some nice commented patches all ready for pdpi! You will probably have to tweak some of them a bit to make work right (toggle might be better than slider, range might not be good)but for the most part they just work.
 
 Here is how to get it on the pi and run it:
 
