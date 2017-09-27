@@ -151,6 +151,7 @@ Here is how to get it on the pi and run it:
 cd /pdpi/lib
 wget https://gist.githubusercontent.com/konsumer/84ebf8837cdd80fde839/raw/ca79c60c8a54f053f3c117b06392b0956f9cbdc3/wrap_ladspa.py
 mkdir ladspa
+apt install python
 python wrap_ladspa.py
 ```
 
