@@ -94,7 +94,8 @@ knob1 - detune
 
 ## Installing on the raspberry pi
 
-* Install [minibian](https://minibianpi.wordpress.com/download/). I am on a Mac, so I used [Apple Pi Baker](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/), but here are [instructions for others](https://www.raspberrypi.org/documentation/installation/installing-images/).
+* Install [minibian](https://minibianpi.wordpress.com/download/). I am on a Mac, so I used [Apple Pi Baker](http://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/), but here are [instructions for others](https://www.raspberrypi.org/documentation/installation/installing-images/). Make a blank file in the root of the SD called `ssh` (with no extension,) the contents don't matter.
+* If you don't have a monitor/keyboard, make a simple network with [just a cable](https://pihw.wordpress.com/guides/direct-network-connection/)
 * Login with `root` (password: `raspberry`)
 * `apt update && apt install raspi-config` and resize your partition with `raspi-config --expand-rootfs`
 * Reboot and login to pi
